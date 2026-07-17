@@ -24,4 +24,7 @@ A simple and responsive web application to track income and expenses in real-tim
 5. Balance updates automatically
 
 ## Author
-Revathi K
+Revathi.M
+Monisha.M
+Rohini.N
+Sajitha.G
