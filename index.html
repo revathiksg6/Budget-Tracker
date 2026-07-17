@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Budget Tracker</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -13,16 +14,30 @@
 <div class="card">
   <p style="text-align:center;">Total Balance</p>
   <div class="balance" id="balance">₹0</div>
+  <div class="summary">
+    <span class="income">Income: ₹<span id="totalIncome">0</span></span>
+    <span class="expense">Expense: ₹<span id="totalExpense">0</span></span>
+  </div>
 </div>
 
 <div class="card">
   <input type="text" id="desc" placeholder="Description (e.g. Food, Salary)">
   <input type="number" id="amount" placeholder="Amount">
+  <input type="date" id="date">
   <select id="type">
     <option value="income">Income</option>
     <option value="expense">Expense</option>
   </select>
-  <button onclick="addTransaction()">Add Transaction</button>
+  <button id="submitBtn" onclick="addTransaction()">Add Transaction</button>
+</div>
+
+<div class="card">
+  <canvas id="chart" height="200"></canvas>
+</div>
+
+<div class="card">
+  <h3>Filter by Month</h3>
+  <input type="month" id="monthFilter" onchange="render()">
 </div>
 
 <div class="card">
