@@ -9,7 +9,10 @@
 </head>
 <body>
 
-<h1>💰 Budget Tracker</h1>
+<div class="topbar">
+  <h1>💰 Budget Tracker</h1>
+  <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+</div>
 
 <div class="card">
   <p style="text-align:center;">Total Balance</p>
@@ -21,14 +24,41 @@
 </div>
 
 <div class="card">
-  <input type="text" id="desc" placeholder="Description (e.g. Food, Salary)">
+  <h3>Monthly Budget Limit</h3>
+  <input type="number" id="budgetLimit" placeholder="e.g. 5000">
+  <button onclick="setBudgetLimit()">Set Limit</button>
+  <div id="budgetStatus"></div>
+</div>
+
+<div class="card">
+  <h3>Savings Goal</h3>
+  <input type="number" id="savingsGoal" placeholder="e.g. 10000">
+  <button onclick="setSavingsGoal()">Set Goal</button>
+  <div class="progress-wrap"><div class="progress-bar" id="goalProgress"></div></div>
+  <div id="goalStatus"></div>
+</div>
+
+<div class="card">
+  <input type="text" id="desc" placeholder="Description (e.g. Lunch, Salary)">
   <input type="number" id="amount" placeholder="Amount">
   <input type="date" id="date">
+  <select id="category">
+    <option value="🍔 Food">🍔 Food</option>
+    <option value="🚗 Travel">🚗 Travel</option>
+    <option value="🛍 Shopping">🛍 Shopping</option>
+    <option value="💡 Bills">💡 Bills</option>
+    <option value="💼 Salary">💼 Salary</option>
+    <option value="📦 Other">📦 Other</option>
+  </select>
   <select id="type">
     <option value="income">Income</option>
     <option value="expense">Expense</option>
   </select>
+  <label class="checkbox-row">
+    <input type="checkbox" id="recurring"> Repeat every month
+  </label>
   <button id="submitBtn" onclick="addTransaction()">Add Transaction</button>
+  <button class="voice-btn" onclick="startVoice()">🎤 Add by Voice</button>
 </div>
 
 <div class="card">
@@ -38,6 +68,12 @@
 <div class="card">
   <h3>Filter by Month</h3>
   <input type="month" id="monthFilter" onchange="render()">
+</div>
+
+<div class="card">
+  <h3>Export</h3>
+  <button onclick="exportCSV()">⬇️ Export as Excel (CSV)</button>
+  <button onclick="exportPDF()">⬇️ Export as PDF</button>
 </div>
 
 <div class="card">
