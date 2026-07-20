@@ -43,5 +43,11 @@ Open this link on any phone or laptop browser — no installation needed, works 
 ## Privacy
 This app stores all data locally in your browser. No data is ever sent to a server, ensuring complete privacy without requiring login or premium access.
 
+## Team Members
+- Revathi M
+- Monisha M
+- Rohini N
+- Sajitha G
+
 ## Author
 Revathi M
