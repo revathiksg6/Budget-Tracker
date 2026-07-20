@@ -1,16 +1,44 @@
+:root {
+  --bg: #0f0f1a;
+  --card: #1a1a2e;
+  --text: #ffffff;
+  --gray: #a0a0b8;
+  --input: #2a2a40;
+  --purple: #7c5cff;
+  --green: #4ade80;
+  --red: #f87171;
+}
+body.light {
+  --bg: #f4f4f8;
+  --card: #ffffff;
+  --text: #14142a;
+  --gray: #5a5a70;
+  --input: #eaeaf2;
+  --purple: #7c5cff;
+  --green: #16a34a;
+  --red: #dc2626;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-body { background: #0f0f1a; color: #fff; padding: 20px; max-width: 500px; margin: auto; }
-h1 { text-align: center; margin-bottom: 20px; color: #7c5cff; }
-.card { background: #1a1a2e; padding: 15px; border-radius: 12px; margin-bottom: 15px; }
+body { background: var(--bg); color: var(--text); padding: 20px; max-width: 500px; margin: auto; transition: 0.3s; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.topbar h1 { color: var(--purple); }
+#themeBtn { background: var(--input); border: none; color: var(--text); border-radius: 8px; padding: 8px 12px; font-size: 16px; cursor: pointer; }
+.card { background: var(--card); padding: 15px; border-radius: 12px; margin-bottom: 15px; }
 .balance { text-align: center; font-size: 28px; font-weight: bold; margin: 10px 0; }
 .summary { display: flex; justify-content: space-between; font-size: 14px; margin-top: 8px; }
-.income { color: #4ade80; }
-.expense { color: #f87171; }
-input, select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: none; background: #2a2a40; color: #fff; }
-button { width: 100%; padding: 12px; background: #7c5cff; color: #fff; border: none; border-radius: 8px; font-size: 16px; margin-top: 10px; cursor: pointer; }
+.income { color: var(--green); }
+.expense { color: var(--red); }
+input, select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: none; background: var(--input); color: var(--text); }
+button { width: 100%; padding: 12px; background: var(--purple); color: #fff; border: none; border-radius: 8px; font-size: 16px; margin-top: 10px; cursor: pointer; }
+.voice-btn { background: var(--input); color: var(--text); }
+.checkbox-row { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--gray); margin-top: 8px; }
+.checkbox-row input { width: auto; margin: 0; }
 ul { list-style: none; margin-top: 10px; }
-li { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #2a2a40; margin-bottom: 6px; border-radius: 8px; flex-wrap: wrap; }
+li { display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--input); margin-bottom: 6px; border-radius: 8px; flex-wrap: wrap; }
 .btn-group { display: flex; gap: 6px; }
-.edit-btn { background: #4ade80; border: none; color: #0f0f1a; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-weight: bold; }
-.delete-btn { background: #f87171; border: none; color: #fff; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
-.date-tag { font-size: 11px; color: #888; display: block; }
+.edit-btn { background: var(--green); border: none; color: #0f0f1a; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-weight: bold; width: auto; margin: 0; }
+.delete-btn { background: var(--red); border: none; color: #fff; border-radius: 6px; padding: 4px 10px; cursor: pointer; width: auto; margin: 0; }
+.date-tag { font-size: 11px; color: var(--gray); display: block; }
+#budgetStatus, #goalStatus { margin-top: 10px; font-size: 14px; font-weight: bold; }
+.progress-wrap { width: 100%; background: var(--input); border-radius: 8px; height: 18px; margin-top: 10px; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--green); width: 0%; transition: 0.3s; }
